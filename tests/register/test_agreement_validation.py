@@ -20,7 +20,8 @@ def test_agreement_validation():
         page.wait_for_timeout(1000)
         
         # Check if still on register page (indicating validation failed)
-        assert "register" in page.url or page.locator("input[type='password']").is_visible(), \
+        is_on_register_page = "register" in page.url.lower()
+        assert is_on_register_page, \
             "Should not allow registration without agreement"
         
         # Now check the agreement checkbox

@@ -31,8 +31,9 @@ def test_random_email_registration():
             page.wait_for_load_state("networkidle")
             page.wait_for_timeout(1500)
             
-            # Verify registration succeeded
-            assert "register" not in page.url.lower(), \
+            # Verify registration succeeded - check URL or page content
+            is_on_register_page = "register" in page.url.lower()
+            assert not is_on_register_page, \
                 f"Registration {i+1} failed - still on register page"
             
             page.close()

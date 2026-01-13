@@ -36,8 +36,8 @@ def test_successful_registration_email():
         page.wait_for_timeout(2000)
         
         # Check if registration was successful
-        # Either redirected to lobby or login page
-        assert "register" not in page.url.lower() or page.locator("text='success'").count() > 0, \
+        # Either redirected away from register page or see success message
+        assert "register" not in page.url.lower(), \
             "Should redirect away from register page after successful registration"
         
         browser.close()

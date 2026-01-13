@@ -31,10 +31,8 @@ def test_invalid_email_format():
             email_input.clear()
             email_input.fill(invalid_email)
             page.wait_for_timeout(300)
-            
-            # Check if validation appears
-            error = page.locator("[role='alert'], .error, .validation")
-            # Error might appear or email input might have invalid state
+            # Email input may or may not show validation error,
+            # but the form should handle invalid formats gracefully
         
         browser.close()
 

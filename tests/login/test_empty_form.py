@@ -15,8 +15,8 @@ def test_empty_form():
         
         page.wait_for_timeout(1000)
         
-        # Should still be on login page or see validation error
-        assert "login" in page.url or page.locator("[role='alert'], .error").count() > 0, \
+        # Should still be on login page (validation should prevent submission)
+        assert "login" in page.url, \
             "Should prevent empty form submission"
         
         browser.close()

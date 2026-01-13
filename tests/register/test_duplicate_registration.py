@@ -47,10 +47,9 @@ def test_duplicate_registration():
         page.wait_for_timeout(1500)
         
         # Should see error or stay on register page
-        error_message = page.locator("[role='alert'], .error:has-text('already'), .error:has-text('exist')")
         is_on_register_page = "register" in page.url.lower()
         
-        assert error_message.count() > 0 or is_on_register_page, \
+        assert is_on_register_page, \
             "Should prevent duplicate email registration"
         
         browser.close()

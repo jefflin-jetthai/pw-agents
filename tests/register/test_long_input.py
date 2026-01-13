@@ -32,7 +32,8 @@ def test_long_input():
         page.wait_for_timeout(1000)
         
         # Should handle gracefully (error or success, but not crash)
-        assert page.locator("text='error'").count() >= 0, "Page should handle long input gracefully"
+        # Page should still be responsive and either show error or complete successfully
+        assert page.url, "Page should still be loaded and responsive"
         
         browser.close()
 

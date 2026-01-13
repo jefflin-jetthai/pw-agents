@@ -22,11 +22,10 @@ def test_invalid_credentials():
         page.wait_for_timeout(1500)
         
         # Should show error or stay on login page
-        error_message = page.locator("[role='alert'], .error:has-text('invalid'), .error:has-text('incorrect')")
         is_on_login_page = "login" in page.url.lower()
         
-        assert error_message.count() > 0 or is_on_login_page, \
-            "Should reject invalid credentials"
+        assert is_on_login_page, \
+            "Should reject invalid credentials and stay on login page"
         
         browser.close()
 

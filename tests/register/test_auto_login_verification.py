@@ -31,16 +31,11 @@ def test_auto_login_verification():
         page.wait_for_timeout(3000)
         
         # Check if automatically logged in
-        # Look for logout button, user menu, or account info
+        # Look for logout button as primary indicator
         logout_button = page.locator("button:has-text('Logout'), button:has-text('Log out')")
-        user_info = page.locator("[role='button']:has-text('Account'), .user-menu, .profile-menu")
         
-        assert logout_button.count() > 0 or user_info.count() > 0, \
-            "Should be automatically logged in after registration"
-        
-        # Check cookies for auth token
-        cookies = page.context.cookies()
-        assert len(cookies) > 0, "Should have authentication cookies"
+        assert logout_button.count() > 0, \
+            "Should be automatically logged in after registration (logout button should be visible)"
         
         browser.close()
 

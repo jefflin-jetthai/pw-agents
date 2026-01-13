@@ -47,8 +47,6 @@ def test_concurrent_registration():
         successes = sum(1 for page in pages if "register" not in page.url.lower())
         
         assert successes >= 1, "At least one concurrent registration should succeed"
-        
-        # Close all
         for page in pages:
             page.close()
         browser.close()

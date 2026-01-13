@@ -18,8 +18,8 @@ def test_empty_form_submission():
         
         page.wait_for_timeout(1000)
         
-        # Should still be on register page or see validation error
-        assert "register" in page.url or page.locator("[role='alert'], .error").count() > 0, \
+        # Should still be on register page (validation should prevent submission)
+        assert "register" in page.url, \
             "Should prevent empty form submission"
         
         browser.close()

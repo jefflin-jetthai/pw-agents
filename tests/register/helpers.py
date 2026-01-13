@@ -14,11 +14,11 @@ def dismiss_modal_if_any(page):
     try:
         # Try common modal close buttons
         close_button = page.locator("button[aria-label='Close'], .modal-close, [role='button'][aria-label*='close']").first
-        if close_button.is_visible():
+        if close_button and close_button.is_visible():
             close_button.click()
-            page.wait_for_load_state("networkidle")
-    except:
-        pass  # Modal might not exist
+            page.wait_for_timeout(500)  # Brief wait for modal to close
+    except Exception:
+        pass  # Modal might not exist or click failed
 
 
 def ensure_agreement_checked(page):

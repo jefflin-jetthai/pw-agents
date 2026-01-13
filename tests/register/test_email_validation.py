@@ -24,9 +24,6 @@ def test_email_validation():
         email_input.fill("notanemail")
         page.wait_for_timeout(500)
         
-        # Check if validation error appears or form still accepts it
-        error = page.locator("[role='alert'], .error, .invalid")
-        
         # Try valid email
         email_input.clear()
         email_input.fill("test@example.com")
