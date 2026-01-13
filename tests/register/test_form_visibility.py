@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from helpers import dismiss_modal_if_any
+from .helpers import dismiss_modal_if_any
 
 
 def test_form_visibility():

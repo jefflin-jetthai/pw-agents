@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from helpers import dismiss_modal_if_any, ensure_agreement_checked
+from .helpers import dismiss_modal_if_any, ensure_agreement_checked
 
 
 def test_long_input():
