@@ -1,0 +1,68 @@
+
+Running 4 tests using 4 workers
+
+[1A[2K[1/4] [chromium] › tests/login_success_cases/game_lobby_after_login.spec.ts:7:7 › 登入功能測試 › 登入成功後的遊戲大廳驗證
+[1A[2K[2/4] [chromium] › tests/login_success_cases/login_user_experience.spec.ts:7:7 › 登入功能測試 › 登入過程中的用戶體驗驗證
+[1A[2K[3/4] [chromium] › tests/login_success_cases/valid_email_login_success.spec.ts:7:7 › 登入功能測試 › 成功登入 - 使用有效的電子郵件和密碼
+[1A[2K[4/4] [chromium] › tests/login_success_cases/login_form_elements_visibility.spec.ts:7:7 › 登入功能測試 › 登入頁面元素驗證
+[1A[2K  1) [chromium] › tests/login_success_cases/login_user_experience.spec.ts:7:7 › 登入功能測試 › 登入過程中的用戶體驗驗證 
+
+    TypeError: a is not iterable
+
+      10 |
+      11 |     // 2. 驗證頁面標題為「Rakuplay｜Most popular online slot games in Malaysia.」
+    > 12 |     expect(page.title()).toContain('Rakuplay');
+         |                          ^
+      13 |
+      14 |     // 3. 驗證 Rakuplay logo 在頁面上可見
+      15 |     const logo = page.locator('img[alt="logo"]');
+        at /Users/jefflin/gitProject/pw-agents/tests/login_success_cases/login_user_experience.spec.ts:12:26
+
+    Error Context: test-results/login_success_cases-login_-e5fff-erience-登入功能測試-登入過程中的用戶體驗驗證-chromium/error-context.md
+
+
+[1A[2K  2) [chromium] › tests/login_success_cases/game_lobby_after_login.spec.ts:7:7 › 登入功能測試 › 登入成功後的遊戲大廳驗證 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Rakuplay"[39m
+    Received string:    [31m"Hot Game - DEMO MYR"[39m
+
+      30 |     // 4. 驗證頁面標題或頁面內容已更新
+      31 |     const title = await page.title();
+    > 32 |     expect(title).toContain('Rakuplay');
+         |                   ^
+      33 |
+      34 |     // 5. 驗證顯示用戶帳號或用戶名稱的資訊區
+      35 |     const userNameButton = page.locator('button >> text=Mr. Ervin Lind II').first();
+        at /Users/jefflin/gitProject/pw-agents/tests/login_success_cases/game_lobby_after_login.spec.ts:32:19
+
+    Error Context: test-results/login_success_cases-game_l-91f0f-r_login-登入功能測試-登入成功後的遊戲大廳驗證-chromium/error-context.md
+
+
+[1A[2K  3) [chromium] › tests/login_success_cases/valid_email_login_success.spec.ts:7:7 › 登入功能測試 › 成功登入 - 使用有效的電子郵件和密碼 
+
+    TimeoutError: page.waitForURL: Timeout 5000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "**/main" until "load"
+    ============================================================
+
+      36 |
+      37 |     // 10. 等待頁面導向且加載完成（預期 3-5 秒）
+    > 38 |     await page.waitForURL('**/main', { timeout: 5000 });
+         |                ^
+      39 |     await page.waitForTimeout(2000);
+      40 |
+      41 |     // 11. 驗證是否成功導向至遊戲大廳頁面
+        at /Users/jefflin/gitProject/pw-agents/tests/login_success_cases/valid_email_login_success.spec.ts:38:16
+
+    Error Context: test-results/login_success_cases-valid_-30d39--登入功能測試-成功登入---使用有效的電子郵件和密碼-chromium/error-context.md
+
+
+[1A[2K  3 failed
+    [chromium] › tests/login_success_cases/game_lobby_after_login.spec.ts:7:7 › 登入功能測試 › 登入成功後的遊戲大廳驗證 
+    [chromium] › tests/login_success_cases/login_user_experience.spec.ts:7:7 › 登入功能測試 › 登入過程中的用戶體驗驗證 
+    [chromium] › tests/login_success_cases/valid_email_login_success.spec.ts:7:7 › 登入功能測試 › 成功登入 - 使用有效的電子郵件和密碼 
+  1 passed (16.5s)
+
+[36m  Serving HTML report at http://localhost:9323. Press Ctrl+C to quit.[39m

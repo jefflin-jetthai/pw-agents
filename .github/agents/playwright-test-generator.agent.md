@@ -1,35 +1,8 @@
 ---
 name: playwright-test-generator
-description: 'Use this agent when you need to create automated browser tests
-  using Playwright Examples: <example>Context: User wants to generate a test for
-  the test plan item. <test-suite><!-- Verbatim name of the test spec group w/o
-  ordinal like "Multiplication tests" --></test-suite> <test-name><!-- Name of
-  the test case without the ordinal like "should add two numbers"
-  --></test-name> <test-file><!-- Name of the file to save the test into, like
-  tests/multiplication/should-add-two-numbers.spec.ts --></test-file>
-  <seed-file><!-- Seed file path from test plan --></seed-file> <body><!-- Test
-  case content including steps and expectations --></body></example>'
+description: 'Use this agent when you need to create automated browser tests using Playwright.'
 tools:
-  - search
-  - playwright-test/browser_click
-  - playwright-test/browser_drag
-  - playwright-test/browser_evaluate
-  - playwright-test/browser_file_upload
-  - playwright-test/browser_handle_dialog
-  - playwright-test/browser_hover
-  - playwright-test/browser_navigate
-  - playwright-test/browser_press_key
-  - playwright-test/browser_select_option
-  - playwright-test/browser_snapshot
-  - playwright-test/browser_type
-  - playwright-test/browser_verify_element_visible
-  - playwright-test/browser_verify_list_visible
-  - playwright-test/browser_verify_text_visible
-  - playwright-test/browser_verify_value
-  - playwright-test/browser_wait_for
-  - playwright-test/generator_read_log
-  - playwright-test/generator_setup_page
-  - playwright-test/generator_write_test
+  ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'copilot-container-tools/*', 'app-modernization-deploy/*', 'playwright-test/*', 'agent', 'ms-python.python/getPythonEnvironmentInfo', 'ms-python.python/getPythonExecutableCommand', 'ms-python.python/installPythonPackage', 'ms-python.python/configurePythonEnvironment', 'ms-toolsai.jupyter/configureNotebook', 'ms-toolsai.jupyter/listNotebookPackages', 'ms-toolsai.jupyter/installNotebookPackages', 'vscjava.migrate-java-to-azure/appmod-install-appcat', 'vscjava.migrate-java-to-azure/appmod-precheck-assessment', 'vscjava.migrate-java-to-azure/appmod-run-assessment', 'vscjava.migrate-java-to-azure/appmod-get-vscode-config', 'vscjava.migrate-java-to-azure/appmod-preview-markdown', 'vscjava.migrate-java-to-azure/migration_assessmentReport', 'vscjava.migrate-java-to-azure/uploadAssessSummaryReport', 'vscjava.migrate-java-to-azure/appmod-search-knowledgebase', 'vscjava.migrate-java-to-azure/appmod-search-file', 'vscjava.migrate-java-to-azure/appmod-fetch-knowledgebase', 'vscjava.migrate-java-to-azure/appmod-create-migration-summary', 'vscjava.migrate-java-to-azure/appmod-run-task', 'vscjava.migrate-java-to-azure/appmod-consistency-validation', 'vscjava.migrate-java-to-azure/appmod-completeness-validation', 'vscjava.migrate-java-to-azure/appmod-version-control', 'vscjava.migrate-java-to-azure/appmod-python-setup-env', 'vscjava.migrate-java-to-azure/appmod-python-validate-syntax', 'vscjava.migrate-java-to-azure/appmod-python-validate-lint', 'vscjava.migrate-java-to-azure/appmod-python-run-test', 'vscjava.vscode-java-debug/debugJavaApplication', 'vscjava.vscode-java-debug/setJavaBreakpoint', 'vscjava.vscode-java-debug/debugStepOperation', 'vscjava.vscode-java-debug/getDebugVariables', 'vscjava.vscode-java-debug/getDebugStackTrace', 'vscjava.vscode-java-debug/evaluateDebugExpression', 'vscjava.vscode-java-debug/getDebugThreads', 'vscjava.vscode-java-debug/removeJavaBreakpoints', 'vscjava.vscode-java-debug/stopDebugSession', 'vscjava.vscode-java-debug/getDebugSessionInfo', 'vscjava.vscode-java-upgrade/list_jdks', 'vscjava.vscode-java-upgrade/list_mavens', 'vscjava.vscode-java-upgrade/install_jdk', 'vscjava.vscode-java-upgrade/install_maven', 'todo']
 model: Claude Sonnet 4
 mcp-servers:
   playwright-test:
